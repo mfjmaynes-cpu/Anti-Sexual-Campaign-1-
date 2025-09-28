@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summit Front Page</title>
+    <style>
+        
+        .hotlines-section .section-desc {
+            background: #f9f3ee;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 2rem;
+        }
+            .purpose-header {
+                width: 100%;
+                background: #e3f2fd;
+                color: #6a1b9a;
+                font-size: 4rem;
+                font-weight: bold;
+                text-align: center;
+                padding: 2rem 0;
+                border-radius: 10px;
+                margin-bottom: 2rem;
+                box-shadow: 0 2px 8px rgba(106,27,154,0.08);
+                letter-spacing: 2px;
+                border: 3px solid #d81b60;
+            }
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: linear-gradient(135deg, #f3e6fa 60%, #ffe0ec 100%);
+            min-height: 100vh; 
+            position: relative; 
+        }
+
+        
+        .campaign-ribbon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .ribbon-icon {
+            font-size: 2.5rem;
+            color: #d81b60;
+            margin-right: 1rem;
+        }
+        .campaign-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #6a1b9a;
+            letter-spacing: 2px;
+        }
+
+        
+        .section-divider {
+            width: 80%;
+            height: 8px;
+            background: linear-gradient(90deg, #d81b60 0%, #6a1b9a 100%);
+            border-radius: 8px;
+            margin: 2rem auto;
+        }
+
+        
+        .action-list {
+            list-style: none;
+            padding: 0;
+        }
+        .action-list li {
+            margin-bottom: 1.2rem;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+        }
+        .action-list .fa {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #d81b60;
+        }
+
+        body::before {
+        }
+
+        
+        body > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+    background: #6a1b9a;
+            z-index: 1000;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        color: #fff;
+        letter-spacing: 2px;
+            margin-left: 2rem;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-right: 2rem;
+        }
+
+        .navbar li {
+            margin: 0 1rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+        background-color: #d81b60;
+        color: #fff;
+        }
+
+       
+        main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(106, 27, 154, 0.2);
+        color: #6a1b9a;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+      
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            margin-top: auto;
+        }
+
+
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+    color: #d81b60;
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 1em;
+            border-radius: 10px;
+        }
+
+  
+        .section-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-img {
+            max-width: 50%;
+            height: auto;
+            margin-right: 2rem;
+            border-radius: 10px;
+        }
+
+        .section-desc {
+            max-width: 50%;
+            background: #f9f3ee;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+   
+        .home-section {
+            background: url('images11.jpg') center center/cover no-repeat fixed;
+            min-height: 100vh;
+            width: 100vw;
+            margin: 0;
+            position: relative;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 1;
+        }
+
+        .home-section .section-flex {
+            position: relative;
+            z-index: 2;
+            background: none;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-section .section-desc {
+            width: 100%;
+            color: #fff;
+            font-size: 1.5em;
+            line-height: 1.7;
+            padding: 0 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: none;
+        }
+
+        .home-section h1 {
+            text-align: center;
+            margin-bottom: 1em;
+            font-size: 3em;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .home-section p {
+            text-align: center;
+            font-size: 1.25em;
+            max-width: 700px;
+        }
+
+       
+        .hero-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ddd;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            background-color: #0056b3;
+        }
+
+  
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar li {
+                margin: 0.5rem 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+        body {
+            background-attachment: scroll;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="campaign-ribbon">
+        <span class="ribbon-icon"><i class="fa-solid fa-ribbon"></i></span>
+        <span class="campaign-title">Anti-Sexual Campaign</span>
+    </div>
+    <nav class="navbar">
+        <div class="navbar-title">Anti-Sexual Campaign</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#awareness">Awareness</a></li>
+            <li><a href="#summit-highlights">Take Actions</a></li>
+            <li><a href="#hotlines">Contact</a></li>
+            <li><a href="login.html">Whisper Board</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home" class="home-section">
+            <div class="home-overlay"></div>
+            <div class="hero-section">
+                <h2>Anti-Sexual Campaign</h2>
+                <p>Together, we fight against harassment and create safe spaces for all. Join us in promoting equality, respect, and justice.</p>
+                <button class="hero-btn">Learn More</button>
+                        </div>
+                <script>
+                  
+                    document.querySelector('.hero-btn').addEventListener('click', function() {
+                        const section = document.querySelector('#purpose');
+                        if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                </script>
+        </section>
+        <section id="awareness" class="awareness-section">
+            <div class="purpose-header">AWARENESS</div>
+            <div class="section-flex">
+                <div class="section-desc" style="max-width:100%; text-align:left; font-size:1.15rem;">
+                    <p><strong>Sexual harassment and abuse affect countless people every day—often leaving lasting pain, fear, and silence. By raising awareness and taking action, we can protect ourselves and support others.</strong></p>
+                    <h3 style="color:#d81b60; margin-top:2rem;">RESPECT BOUNDARIES</h3>
+                    <p>Always ask for consent and never assume it. Respecting someone’s comfort zone is the first step toward safety.</p>
+                    <h3 style="color:#d81b60; margin-top:2rem;">STAY AWARE</h3>
+                    <p>Be mindful of your surroundings, whether in public or online. Protect your personal information and trust your instincts.</p>
+                    <h3 style="color:#d81b60; margin-top:2rem;">SPEAK UP</h3>
+                    <p>If you see harassment or abuse, don’t ignore it. Safely intervene, report it, or support the victim.</p>
+                    <h3 style="color:#d81b60; margin-top:2rem;">EDUCATE OTHERS</h3>
+                    <p>Learn the signs of abuse and share them with family. Awareness spreads faster when everyone talks about it.</p>
+                </div>
+            </div>
+        <div class="section-divider"></div>
+        </section>
+        <section id="purpose" class="purpose-section">
+            <div class="purpose-header">PURPOSE</div>
+            <div class="section-flex">
+                <div class="section-desc" style="max-width:100%;">
+                    <p>This website is committed to fighting sexual violence by spreading awareness and education. We promote respect, consent, and equality to create safer communities for everyone. Together, we stand against abuse and work toward a culture of dignity and safety.</p>
+                    <h3>Voices that matter</h3>
+                    <p>We know the damage that abuse and violence can cause. That’s why this summit is focused on awareness, healing, and action. Join us in taking a step forward to stop the silence.</p>
+                </div>
+            </div>
+        <div class="section-divider"></div>
+        </section>
+
+        <section id="summit-highlights" class="summit-section">
+            <div class="section-flex" style="max-width:700px; margin:0 auto; justify-content:center;">
+                <div class="section-desc" style="max-width:100%;">
+                    <div style="width:100%;background:#e3f2fd;color:#6a1b9a;font-size:2.5rem;font-weight:bold;text-align:center;padding:1.5rem 0;border-radius:10px;margin-bottom:1.5rem;box-shadow:0 2px 8px rgba(106,27,154,0.08);letter-spacing:2px;border:3px solid #d81b60;">TAKE ACTIONS</div>
+                    <ul class="action-list">
+                        <li><i class="fa-solid fa-bullhorn"></i> <strong>Speak Up:</strong> If you witness harassment or abuse, safely intervene or report it.</li>
+                        <li><i class="fa-solid fa-heart"></i> <strong>Support Victims:</strong> Listen, believe, and help connect them to resources.</li>
+                        <li><i class="fa-solid fa-book-open"></i> <strong>Educate Yourself & Others:</strong> Learn about consent, boundaries, and prevention. Share knowledge in your community.</li>
+                        <li><i class="fa-solid fa-hands-helping"></i> <strong>Volunteer:</strong> Join organizations or campaigns that fight sexual violence.</li>
+                        <li><i class="fa-solid fa-balance-scale"></i> <strong>Advocate:</strong> Promote policies and programs that protect and empower survivors.</li>
+                    </ul>
+                    <div style="margin-top:1.5rem; font-size:1.1rem; color:#6a1b9a; font-weight:bold;">Every action counts. Together, we can create safer spaces for all.</div>
+                </div>
+            </div>
+    <div class="section-divider"></div>
+    <div class="section-divider"></div>
+    <div class="section-divider"></div>
+                <script>
+                   
+                    document.querySelector('.hero-btn').addEventListener('click', function() {
+                        const section = document.querySelector('#awareness, #purpose');
+                        if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                </script>
+        </section>
+
+        <section id="hotlines" class="hotlines-section">
+    <div class="section-divider"></div>
+            <div class="section-flex" style="flex-direction:column; align-items:flex-start;">
+                <div style="width:100%;background:#e3f2fd;color:#6a1b9a;font-size:2.5rem;font-weight:bold;text-align:center;padding:1.5rem 0;border-radius:10px;margin-bottom:1.5rem;box-shadow:0 2px 8px rgba(106,27,154,0.08);letter-spacing:2px;border:3px solid #d81b60;">CONTACT & HOTLINES</div>
+                <div class="section-desc" style="max-width:100%; text-align:left; font-size:1.15rem;">
+                    <ul style="list-style:none; padding:0;">
+                        <li><strong>✅ DSWD Crisis Intervention Unit (CIU) – Verified from Official Page</strong><br>
+                        📞 (02) 8962-2813<br>
+                        📞 (02) 8951-7433<br>
+                        🌐 Website: <a href="https://crisis-intervention.dswd.gov.ph/" target="_blank">https://crisis-intervention.dswd.gov.ph/</a><br>
+                        🛡️ They assist individuals in crisis, including abuse and violence victims, and can connect them with legal, medical, and social services.<br><br></li>
+                        <li><strong>✅ DSWD Main Trunkline – Official Central Office</strong><br>
+                        ☎️ Landline: (632) 8-931-81-01 to 07<br>
+                        📱 Globe: 0917-110-5686, 0917-827-2543<br>
+                        📱 Smart: 0919-911-6200<br>
+                        🌐 Website: <a href="https://www.dswd.gov.ph/" target="_blank">https://www.dswd.gov.ph/</a><br>
+                        🛡️ DSWD provides help for victims of abuse, neglect, exploitation, and harassment, including crisis intervention, legal assistance, and referrals to protective services.<br><br></li>
+                        <li><strong>✅ PNP Women and Children Protection Center (WCPC) – Verified from Official Sources</strong><br>
+                        📞 Trunkline: +632 723 0401<br>
+                        📞 Message Center (Local): 6961<br>
+                        📞 Admin Office: +63 995 564 4039<br>
+                        📞 AVAWCD (Anti-Violence Against Women & Children): Local 6962<br>
+                        📞 ATIPD (Anti-Trafficking in Persons Division): Local 6963<br>
+                        📞 ICAC (Internet Crimes Against Children): +632 534 7338<br>
+                        📱 Aleng Pulis Hotline – Smart: +63 920 907 1717<br>
+                        📱 Aleng Pulis Hotline – Globe: +63 966 725 5961<br>
+                        🌐 Facebook: <a href="https://facebook.com/wcpc.didmpnp" target="_blank">https://facebook.com/wcpc.didmpnp</a><br>
+                        📧 Email: <a href="mailto:alengpuliswcpc.didm@pnp.gov.ph">alengpuliswcpc.didm@pnp.gov.ph</a><br>
+                        🛡️ WCPC is a specialized unit of the Philippine National Police that investigates and responds to sexual abuse, sexual harassment, child exploitation, trafficking, and online sexual crimes. They offer protection, legal coordination, and support services for victims.<br><br></li>
+                    </ul>
+                </div>
+            </div>
+        <div class="section-divider"></div>
+        </section>
+
+
+    <footer>
+        <div style="font-size:1.1rem; margin-bottom:1rem; color:#d81b60; font-weight:bold;">Resources & Helplines</div>
+        <div style="margin-bottom:0.5rem;">DSWD Crisis Intervention: <a href="https://crisis-intervention.dswd.gov.ph/" target="_blank">Visit Site</a></div>
+        <div style="margin-bottom:0.5rem;">PNP Women & Children Protection: <a href="https://facebook.com/wcpc.didmpnp" target="_blank">Facebook</a></div>
+        <div style="margin-bottom:0.5rem;">DSWD Main Trunkline: <a href="https://www.dswd.gov.ph/" target="_blank">Visit Site</a></div>
+        <div style="margin-top:1rem; font-size:0.95rem; color:#6a1b9a;">&copy; 2025 Anti-Sexual Campaign. All rights reserved.</div>
+    </footer>
+    <script>
+   
+      document.querySelectorAll('.navbar a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            const section = document.querySelector(href);
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+    </script>
+</body>
+</html>
